@@ -9,3 +9,5 @@ google-auth-oauthlib
 pydantic
 requests
 cachetools
+gspread
+oauth2client
