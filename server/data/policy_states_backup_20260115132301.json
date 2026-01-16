@@ -1,0 +1,252 @@
+{
+  "2330840": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-07T22:27:22.409982",
+    "usuario": "Usuario"
+  },
+  "2472289": {
+    "estado": "",
+    "fecha": "2026-01-07T12:41:16.576643",
+    "usuario": "Usuario"
+  },
+  "2491880": {
+    "estado": "",
+    "fecha": "2026-01-12T00:52:00.731212",
+    "usuario": "Usuario"
+  },
+  "2521448": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:53:50.724966",
+    "usuario": "Usuario"
+  },
+  "2532556": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:49:48.816020",
+    "usuario": "Usuario"
+  },
+  "2551208": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:50:05.965201",
+    "usuario": "Usuario"
+  },
+  "2564699": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:50:43.120050",
+    "usuario": "Usuario"
+  },
+  "2564242": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:50:52.062888",
+    "usuario": "Usuario"
+  },
+  "2570645": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:51:03.705114",
+    "usuario": "Usuario"
+  },
+  "2556689": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:51:12.605401",
+    "usuario": "Usuario"
+  },
+  "2572038": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:51:22.217150",
+    "usuario": "Usuario"
+  },
+  "2572042": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:51:36.983222",
+    "usuario": "Usuario"
+  },
+  "2572209": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:51:45.854050",
+    "usuario": "Usuario"
+  },
+  "2534912": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:52:10.792498",
+    "usuario": "Usuario"
+  },
+  "2567519": {
+    "estado": "ANULADA",
+    "fecha": "2026-01-12T00:52:31.760947",
+    "usuario": "Usuario"
+  },
+  "2567489": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:52:43.406674",
+    "usuario": "Usuario"
+  },
+  "2573308": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:52:51.990223",
+    "usuario": "Usuario"
+  },
+  "2574210": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:53:01.733531",
+    "usuario": "Usuario"
+  },
+  "2573698": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:53:12.669429",
+    "usuario": "Usuario"
+  },
+  "2564683": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:53:22.237767",
+    "usuario": "Usuario"
+  },
+  "2575991": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:53:31.570842",
+    "usuario": "Usuario"
+  },
+  "2581080": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:56:07.113417",
+    "usuario": "Usuario"
+  },
+  "2583859": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:56:16.862610",
+    "usuario": "Usuario"
+  },
+  "2584931": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:56:27.118923",
+    "usuario": "Usuario"
+  },
+  "2551129": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:56:36.594890",
+    "usuario": "Usuario"
+  },
+  "2581896": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:56:47.403104",
+    "usuario": "Usuario"
+  },
+  "2572040": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:56:55.585618",
+    "usuario": "Usuario"
+  },
+  "2586859": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:57:05.996058",
+    "usuario": "Usuario"
+  },
+  "2573770": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:57:14.434941",
+    "usuario": "Usuario"
+  },
+  "2591851": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:57:38.979928",
+    "usuario": "Usuario"
+  },
+  "2571551": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:58:56.242142",
+    "usuario": "Usuario"
+  },
+  "2572036": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:59:06.654013",
+    "usuario": "Usuario"
+  },
+  "2595732": {
+    "estado": "RECAUDADA",
+    "fecha": "2026-01-12T00:59:15.287922",
+    "usuario": "Usuario"
+  },
+  "256003": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.140739",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "258154": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.141072",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "259970": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.141349",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "262370": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.141596",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "262452": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.141833",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "262536": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.142066",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "262551": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.142293",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "240422": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.142525",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "240758": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.142754",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "245314": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.142978",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "245193": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.143203",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "246791": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.143415",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "248374": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.143629",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "249067": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.143851",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "249205": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.144072",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "249535": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.144288",
+    "usuario": "Sistema (Script Masivo)"
+  },
+  "250312": {
+    "estado": "PENDIENTE",
+    "fecha": "2026-01-15T13:14:40.144504",
+    "usuario": "Sistema (Script Masivo)"
+  }
+}

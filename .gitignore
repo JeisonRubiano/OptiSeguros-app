@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Node
+node_modules/
+dist/
+.env.local
+
+# Project Specific
+server/credentials.json
+server/token.json
+server/.cache_unified.json
+server/.consecutivos_estados.json
+*.xlsx
+.vscode/
+
+# Documentation & Non-Essential
+GOOGLE_APPS_SCRIPT_SETUP.md
+NETWORK_ACCESS.md
+*.pdf
+_scripts_respaldo/
+*.bat
+!start_dev.bat
+.~lock*
