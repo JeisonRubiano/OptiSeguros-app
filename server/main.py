@@ -50,7 +50,22 @@ app.include_router(sheets_api.router)
 # Helper to check for real credentials
 def has_read_credentials():
     creds_file = os.path.join(os.path.dirname(__file__), "credentials.json")
-    return os.path.exists(creds_file)
+    if os.path.exists(creds_file):
+        return True
+    
+    # Check environment variable for JSON content
+    if os.getenv("GOOGLE_CREDENTIALS_JSON"):
+        try:
+            # Write env var to file so libraries can use it normally
+            print("[STARTUP] Creating credentials.json from ENV...")
+            with open(creds_file, "w") as f:
+                f.write(os.getenv("GOOGLE_CREDENTIALS_JSON"))
+            return True
+        except Exception as e:
+            print(f"[STARTUP] Error creating creds from env: {e}")
+            return False
+            
+    return False
 
 @app.on_event("startup")
 async def startup_event():
