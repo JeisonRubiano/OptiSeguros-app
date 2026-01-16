@@ -18,8 +18,10 @@ const LoginPage = () => {
             const token = credentialResponse.credential;
             const decoded = jwtDecode(token);
 
-            if (decoded.hd !== 'segurosbolivar.com') {
-                setError('Acceso restringido. Por favor usa tu cuenta corporativa @segurosbolivar.com');
+            const allowedDomains = ['segurosbolivar.com', 'uptc.edu.co'];
+
+            if (!decoded.hd || !allowedDomains.includes(decoded.hd)) {
+                setError('Acceso restringido. Por favor usa tu cuenta corporativa autorizada.');
                 return;
             }
 
