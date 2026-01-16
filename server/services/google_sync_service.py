@@ -73,16 +73,26 @@ def get_drive_service():
     return build('drive', 'v3', credentials=creds)
 
 def download_sheet_as_excel(service, file_id, output_path):
-    """Descarga un Google Sheet como Excel (.xlsx)."""
+    """Descarga un Google Sheet o un archivo Excel nativo."""
     try:
-        print(f"[SYNC] Iniciando descarga de ID: {file_id}...")
-        
-        # Endpoint para exportar como xlsx
-        # MIME type para Excel: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-        request = service.files().export_media(
-            fileId=file_id,
-            mimeType='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        )
+        print(f"[SYNC] Consultando tipo de archivo ID: {file_id}...")
+        # 1. Verificar tipo de archivo
+        file_metadata = service.files().get(fileId=file_id).execute()
+        mime_type = file_metadata.get('mimeType')
+        print(f"[SYNC] MIME Type detectado: {mime_type}")
+
+        request = None
+        if mime_type == 'application/vnd.google-apps.spreadsheet':
+            # Es un Google Sheet nativo -> Exportar
+            print("[SYNC] Es Google Sheet -> Exportando a Excel...")
+            request = service.files().export_media(
+                fileId=file_id,
+                mimeType='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            )
+        else:
+            # Es un archivo binario (Excel subido) -> Descargar directo
+            print("[SYNC] Es archivo binario -> Descargando directo...")
+            request = service.files().get_media(fileId=file_id)
         
         # Descargar en memoria primero para evitar archivos corruptos si falla a medias
         fh = io.BytesIO()
