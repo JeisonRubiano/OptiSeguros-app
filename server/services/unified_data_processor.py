@@ -10,9 +10,18 @@ from pathlib import Path
 import numpy as np
 
 # Rutas
-PROJECT_ROOT = Path(__file__).parent.parent.parent
-EXCEL_FILE = PROJECT_ROOT / "REPORTE NEGOCIOS SALUD INTERNACIONAL -OPERACIONES 06112018.xlsx"
-CACHE_FILE = PROJECT_ROOT / "server" / ".cache_unified.json"
+# Usamos ruta relativa desde 'services/' para ser compatibles con Docker y Local
+# Estructura Local:  .../server/services/unified.py -> ../../server/data
+# Estructura Docker: /app/services/unified.py       -> ../../app/data
+BASE_DIR = Path(__file__).resolve().parent.parent # Sube 2 niveles: services -> server (o app)
+
+EXCEL_FILE = BASE_DIR.parent / "REPORTE NEGOCIOS SALUD INTERNACIONAL -OPERACIONES 06112018.xlsx"
+# En Docker el Excel está en la raiz /app (que es BASE_DIR), en local está en PROJECT_ROOT (BASE_DIR.parent)
+# Ajuste fino: Buscamos Excel en BASE_DIR primero (Docker), si no en BASE_DIR.parent (Local)
+if (BASE_DIR / "REPORTE NEGOCIOS SALUD INTERNACIONAL -OPERACIONES 06112018.xlsx").exists():
+    EXCEL_FILE = BASE_DIR / "REPORTE NEGOCIOS SALUD INTERNACIONAL -OPERACIONES 06112018.xlsx"
+
+CACHE_FILE = BASE_DIR / ".cache_unified.json"
 
 # Caché en memoria (singleton)
 _unified_cache = {
@@ -136,7 +145,7 @@ def get_regional(localidad):
     """Mapea localidad/sucursal a regional usando el mapa COMPLETO."""
     # Cargar mapeo desde JSON
     SUCURSAL_TO_REGIONAL = {}
-    mapping_file = PROJECT_ROOT / "server" / "data" / "regional_mapping.json"
+    mapping_file = BASE_DIR / "data" / "regional_mapping.json"
     
     if mapping_file.exists():
         try:
