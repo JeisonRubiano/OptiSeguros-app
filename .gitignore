@@ -16,6 +16,7 @@ server/token.json
 server/.cache_unified.json
 server/.consecutivos_estados.json
 *.xlsx
+!REPORTE NEGOCIOS SALUD INTERNACIONAL -OPERACIONES 06112018.xlsx
 .vscode/
 
 # Documentation & Non-Essential
