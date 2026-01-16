@@ -16,11 +16,11 @@ TOKEN_FILE = os.path.join(SERVER_DIR, 'token.json')
 # PATH: La ruta local donde se guardará (debe coincidir con lo que espera data_processor.py)
 SYNC_CONFIG = {
     'reporte': {
-        'id': '1iIWQz6cz_GXnFqWCWGPHll6H6DLc98uejeEL7dNRPpQ',
+        'id': '1dnaVOAoYG6lGSUW47WB8fc3Vdu3sAwIA', # Nuevo ID Personal
         'path': os.path.join(BASE_DIR, "REPORTE NEGOCIOS SALUD INTERNACIONAL -OPERACIONES 06112018.xlsx")
     },
     'cancelaciones': {
-        'id': '1S690PUMO9eFyyG9m9UtOlodzr5ogyJmFD5h0CeYpfZY',
+        'id': '1b7Z-nj96CZZZ3dbKBSNP6zXgayUlRDhp', # Nuevo ID Personal
         'path': os.path.join(BASE_DIR, "SEGUIMIENTO CANCELACIONES 2025 (1) (1).xlsx")
     }
 }
@@ -30,9 +30,25 @@ SCOPES = [
     'https://www.googleapis.com/auth/drive.readonly'
 ]
 
+from google.oauth2 import service_account
+
+CREDS_FILE = os.path.join(SERVER_DIR, 'credentials.json')
+
 def get_drive_service():
-    """Autentica y retorna el servicio de Google Drive API."""
+    """Autentica y retorna el servicio de Google Drive API (Soporta Service Account y Token user)."""
     creds = None
+    
+    # 1. Estrategia Prioritaria: Service Account (Ideal para Servidores/Nube)
+    if os.path.exists(CREDS_FILE):
+        try:
+            print(f"[AUTH] Intentando autenticación con Service Account: {CREDS_FILE}")
+            creds = service_account.Credentials.from_service_account_file(
+                CREDS_FILE, scopes=SCOPES)
+            return build('drive', 'v3', credentials=creds)
+        except Exception as e:
+            print(f"[AUTH] Error con Service Account (fallback a token): {e}")
+
+    # 2. Estrategia Legacy: Token de Usuario (token.json)
     if os.path.exists(TOKEN_FILE):
         with open(TOKEN_FILE, 'rb') as token:
             try:
@@ -45,14 +61,13 @@ def get_drive_service():
         if creds and creds.expired and creds.refresh_token:
             try:
                 creds.refresh(Request())
-                # Guardar token refrescado
                 with open(TOKEN_FILE, 'wb') as token:
                     pickle.dump(creds, token)
             except Exception as e:
                 print(f"[ERROR] No se pudo refrescar el token: {e}")
                 return None
         else:
-            print("[ERROR] Token inválido o inexistente. Ejecuta tools/setup_google_sync.py primero.")
+            print("[ERROR] No se encontró método de autenticación válido (ni credentials.json ni token.json).")
             return None
 
     return build('drive', 'v3', credentials=creds)
